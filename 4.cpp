@@ -1,36 +1,25 @@
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int num = 22;
-//     if(num>21){
-//         cout<<"Yes";
-//     }
-// }
 #include<iostream>
 using namespace std;
-#include <conio.h>;
-int main()
-{
-    char dir = 'a';
-    int x =10 , y =10;
-    cout<<"Type Enter to quit\n";
-    while(dir!='\r'){
-        cout<<"\nyour locate is "<<x<<" , "<<y;
-        cout<<"\npress direction key (n, s , e ,w ):";
-        dir = getche();
-        if(dir =='n'){
-            y--;
-        
-        }
-        else if(dir =='s'){
-            y++;
-        }
-        else if(dir=='e'){
-            x++;
-        }
-        else if(dir=='w'){
-            x--;
-        }
+class point {
+    private:
+    int a, b;
+    public :
+    point(int x =0 , int y =0):a(x) , b(y){}
+
+    void print()
+    {
+        cout<<a<<b<<endl;
     }
-    return 0;
+    point operator-(){
+        return point(-a , -b);
+
+    }
+};
+int main(){
+   
+point p1(1 ,2) , p2 , p3;
+p1.print();
+p2.print();
+p3 =-p1;
+p3.print();
 }
